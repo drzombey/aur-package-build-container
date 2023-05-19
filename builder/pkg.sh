@@ -10,8 +10,10 @@ fi
 cd /build
 chown -R makepkg:users /build
 
+pacman -Syy --noconfirm
+pacman-key --init
 pacman -S archlinux-keyring --noconfirm
-pacman -Syu --noconfirm
+
 sudo -u makepkg makepkg --noconfirm -sf
 sudo -u makepkg makepkg --printsrcinfo > .SRCINFO
 
